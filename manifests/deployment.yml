@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "hireekubernetes"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "hireekubernetes"
+    spec:
+      containers:
+        - name: "hireekubernetes"
+          image: "hireecontainerregistry.azurecr.io/hireekubernetes"
+          ports:
+          - containerPort: 80
